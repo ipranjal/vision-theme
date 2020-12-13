@@ -1,0 +1,5 @@
+= Version history =
+
+2019.10.12:
+
+- Initial release for Elgg 3.0
