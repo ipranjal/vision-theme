@@ -38,6 +38,25 @@ background-color:#e6e6ea;
 }
 
 
+
+@media (min-width: 1025px) {
+
+  .elgg-page-topbar .elgg-menu-site-default{
+  display:none;
+}
+
+}
+
+@media (max-width: 1024px) {
+
+.elgg-sidebar-alt{
+  display:none;
+}
+}
+
+
+
+
 .alt_site_menu .elgg-non-link {
   display: none !important;
 }
@@ -63,6 +82,8 @@ margin-left:0px !important;
   //border: 1px solid #dcdcdc !important;
   border-radius: 2rem;
 }
+
+
 
 
 <?php

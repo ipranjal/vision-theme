@@ -24,6 +24,7 @@ function vision_init()
 
     // theme specific CSS
     elgg_extend_view('elgg.css', 'vision_theme/css');
+    elgg_extend_view('walled_garden.css', 'vision_theme/wallgarden.css');
 
     elgg_extend_view('page/elements/sidebar', 'vision_theme/sidebar', 500);
 
