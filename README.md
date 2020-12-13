@@ -1,5 +1,7 @@
-# vision theme
+# Vision theme
 Vision theme for elgg
+
+<img src="https://elgg.org/plugins/icon/3080956/icon.jpg" alt="Markdown Monster icon" >
 
 Vision theme is slightly inspired by Facebook theme , it brings 3 column theme support to elgg. Vision Theme has the following features :
 
