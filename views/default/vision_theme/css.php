@@ -18,6 +18,13 @@
   margin-top:0.6rem;
 
 }
+
+.elgg-list .elgg-item-object-comment{
+  box-shadow: 0 0 0 0 rgba(0,0,0,0) !important;
+  margin-top:0px !important;
+
+}
+
 .elgg-module-aside{
   border:1px solid #e6e6ea;
 }
@@ -92,4 +99,22 @@ $plugin = elgg_get_plugin_from_id('vision_theme');
 .elgg-page-topbar {
   background: <?php echo $plugin->header_color; ?>
 }
+.elgg-page-topbar .elgg-menu li .elgg-child-menu{
+  background: <?php echo $plugin->header_color; ?>
+}
+
+a {
+   color: <?php echo $plugin->header_color; ?>
+}
+
+.elgg-button-action{
+   background: <?php echo $plugin->header_color; ?>
+}
+
+@media only screen and (min-width: 80rem){
+.elgg-page-topbar .elgg-menu li:hover > .elgg-child-menu:before {
+color: <?php echo $plugin->header_color; ?>
+}
+}
+
 ?>

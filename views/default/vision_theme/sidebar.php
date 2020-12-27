@@ -1,6 +1,8 @@
 <?php
 $plugin = elgg_get_plugin_from_id('vision_theme');
 
+
+
 if ($plugin->enablead != 'no') {
     echo elgg_view_module('info', 'Advertisement', $plugin->ad);
 }
@@ -17,6 +19,8 @@ if ($plugin->allusers != 'no') {
         'list_type' => 'gallery',
         'no_results' => elgg_echo('friends:none'),
         'order_by' => 'rand()',
+        'offset_key' => 0,
+
     );
     $content = elgg_list_entities($options);
 

@@ -3,7 +3,7 @@
 return array(
     // General Setting
     'vision_theme:settings:general' => 'General Settings',
-    'vision_theme:label:color' => 'Hex code of header color (Eg #000 for black):',
+    'vision_theme:label:color' => 'Hex code of theme color (Eg #000 for black):',
     //Advertisement Settings
     'vision_theme:settings:ad' => 'Advertisement Settings',
     'vision_theme:label:enablead' => 'Enable advertisement ?',

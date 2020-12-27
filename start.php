@@ -16,11 +16,8 @@ function vision_init()
 
     $plugin = elgg_get_plugin_from_id('vision_theme');
 
-    // custom icon sizes
-    elgg_register_plugin_hook_handler('entity:icon:sizes', 'group', 'elgg_connect_custom_icon_sizes');
     elgg_register_plugin_hook_handler('view_vars', 'page/layouts/default', 'custom_sidebar_alt');
-    elgg_register_plugin_hook_handler('register', 'menu:site', 'site_menu_handler');
-    elgg_extend_view('groups/edit/profile', 'elgg_connect/elements/info', 0);
+    elgg_register_plugin_hook_handler('prepare', 'menu:site', 'site_menu_handler');
 
     // theme specific CSS
     elgg_extend_view('elgg.css', 'vision_theme/css');
@@ -39,10 +36,29 @@ function custom_sidebar_alt($hook, $type, $vars, $params)
     if ($vars['sidebar_alt'] != false) {
         $old_alt = $vars['sidebar_alt'];
     }
-    $vars['sidebar_alt'] = elgg_view('vision_theme/sidebar_alt');
+    if (elgg_get_context() == 'dashboard') {
+        $vars['sidebar_alt'] = false;
+        //$vars['sidebar'] = false;
+
+    } else {
+        $vars['sidebar_alt'] = elgg_view('vision_theme/sidebar_alt');
+
+    }
     $vars['show_owner_block'] = false;
     $vars['show_owner_block_menu'] = false;
     $vars['show_page_menu'] = false;
 
     return $vars;
+}
+
+function site_menu_handler($hook, $type, $items, $params)
+{
+    foreach ($items as $item) {
+        foreach ($item->getItems() as $menu) {
+            if (!$menu->icon) {
+                $menu->icon = 'link';
+            }
+        }
+    }
+    return $items;
 }

@@ -29,13 +29,17 @@ if (!isset($header)) {
     $header = $title . $buttons;
 }
 
-if (empty($header)) {
-    return;
-}
+// if (empty($header)) {
+//     return;
+// }
 ?>
+
 <div class="elgg-layout-content clearfix">
     <div class="elgg-head elgg-layout-header">
-    <?=$header?>
+   <?php if (elgg_get_context() != 'admin') {
+    echo $header;
+}
+?>
      </div>
     <?php echo elgg_view('page/layouts/elements/breadcrumbs', $vars) ?>
 
